@@ -21,7 +21,6 @@ public class ProjectileTest {
         assertEquals(46.28, actual, 0.01);
     }
 
-    // unit test for getY()
     @Test
     public void getY() {
         // given
@@ -35,7 +34,6 @@ public class ProjectileTest {
         assertEquals(-7.90, actual, 0.01);
     }
 
-    // unit test for getApexTime()
     @Test
     public void getApexTime() {
         // given
