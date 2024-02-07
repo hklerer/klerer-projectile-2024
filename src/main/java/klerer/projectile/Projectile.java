@@ -1,4 +1,5 @@
 package klerer.projectile;
+
 public class Projectile {
     private final double angle;
     private final double radians;
@@ -17,11 +18,11 @@ public class Projectile {
     }
 
 
-    public double getX () {
+    public double getX() {
         return Math.cos(radians) * velocity * seconds;
     }
 
-    public double getY () {
+    public double getY() {
         return Math.sin(radians) * velocity * seconds - (.5 * 9.8 * (seconds * seconds));
     }
 
