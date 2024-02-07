@@ -4,6 +4,7 @@ public class Projectile {
     private final double radians;
     private final double velocity;
     private double seconds;
+    private final double gravity = 9.8;
 
     public Projectile(double angle, double velocity) {
         this.angle = angle;
@@ -29,6 +30,14 @@ public class Projectile {
      * @return the time where the projectile is at it's highest point.
      */
     public double getApexTime() {
-        return (Math.sin(radians) * velocity) / 9.8;
+        return (Math.sin(radians) * velocity) / gravity;
+    }
+
+    /**
+     *
+     * @return the highest Y value of projectile
+     */
+    public double getPeakY() {
+        return Math.pow(velocity * Math.sin(radians), 2) / (2 * gravity);
     }
 }
