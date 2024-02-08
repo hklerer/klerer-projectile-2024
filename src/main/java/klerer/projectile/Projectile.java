@@ -39,6 +39,6 @@ public class Projectile {
      * @return the highest Y value of projectile
      */
     public double getPeakY() {
-        return Math.pow(velocity * Math.sin(radians), 2) / (2 * GRAVITY);
+        return (Math.sin(radians) * velocity) * (Math.sin(radians) * velocity) / (GRAVITY * 2);
     }
 }
