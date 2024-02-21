@@ -51,13 +51,13 @@ public class ProjectileFrame extends JFrame {
         secondsField = new JTextField("0");
         add(secondsField);
 
-        JLabel XLabel = new JLabel("X");
-        add(XLabel);
+        JLabel emptyLabelX = new JLabel("X");
+        add(emptyLabelX);
         labelX = new JLabel();
         add(labelX);
 
-        JLabel YLabel = new JLabel("Y");
-        add(YLabel);
+        JLabel emptyLabelY = new JLabel("Y");
+        add(emptyLabelY);
         labelY = new JLabel();
         add(labelY);
 
@@ -66,8 +66,8 @@ public class ProjectileFrame extends JFrame {
         peakY = new JLabel();
         add(peakY);
 
-        JLabel interceptXLabel = new JLabel("Intercept X");
-        add(interceptXLabel);
+        JLabel interceptLabelX = new JLabel("Intercept X");
+        add(interceptLabelX);
         interceptX = new JLabel();
         add(interceptX);
 
