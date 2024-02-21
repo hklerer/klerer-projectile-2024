@@ -1,12 +1,9 @@
 package klerer.projectile;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.DocumentEvent;
+
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class ProjectileFrame extends JFrame {
 
@@ -76,30 +73,16 @@ public class ProjectileFrame extends JFrame {
         JButton calculateButton = new JButton("Calculate");
         add(calculateButton);
 
-        velocityField.getDocument().addDocumentListener(new SimpleDocumentListener() {
-            @Override
-            public void update(DocumentEvent e) {
-                createProjectile();
-            }
-        });
+        velocityField.getDocument().addDocumentListener((SimpleDocumentListener)
+                documentEvent -> generateProjectile());
 
-        angleSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                createProjectile();
-            }
-        });
+        angleSlider.addChangeListener(changeEvent -> generateProjectile());
 
-        calculateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                createProjectile();
-            }
-        });
+        calculateButton.addActionListener(actionEvent -> generateProjectile());
 
     }
 
-    private void createProjectile() {
+    private void generateProjectile() {
         Projectile projectile = new Projectile(
                 angleSlider.getValue(),
                 Double.parseDouble(String.valueOf(velocityField.getX()))
