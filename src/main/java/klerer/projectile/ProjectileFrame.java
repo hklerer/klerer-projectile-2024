@@ -103,17 +103,7 @@ public class ProjectileFrame extends JFrame {
         calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Projectile projectile = new Projectile(
-                        angleSlider.getValue(),
-                        Double.parseDouble(String.valueOf(velocityField.getX()))
-                );
-                projectile.setSeconds(
-                        Double.parseDouble(secondsField.getText())
-                );
-                labelX.setText(Double.toString(projectile.getX()));
-                labelY.setText(Double.toString(projectile.getY()));
-                peakY.setText(Double.toString(projectile.getPeakY()));
-                interceptX.setText(Double.toString(projectile.getInterceptX()));
+                createProjectile();
             }
         });
 
