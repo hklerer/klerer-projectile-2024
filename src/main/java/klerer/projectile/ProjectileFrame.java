@@ -79,17 +79,7 @@ public class ProjectileFrame extends JFrame {
         velocityField.getDocument().addDocumentListener(new SimpleDocumentListener() {
             @Override
             public void update(DocumentEvent e) {
-                Projectile projectile = new Projectile(
-                        Double.parseDouble(velocityField.getText()),
-                        Double.parseDouble(String.valueOf(angleSlider.getValue()))
-                );
-                projectile.setSeconds(
-                        Double.parseDouble(secondsField.getText())
-                );
-                labelX.setText(Double.toString(projectile.getX()));
-                labelY.setText(Double.toString(projectile.getY()));
-                peakY.setText(Double.toString(projectile.getPeakY()));
-                interceptX.setText(Double.toString(projectile.getInterceptX()));
+                createProjectile();
             }
         });
 
