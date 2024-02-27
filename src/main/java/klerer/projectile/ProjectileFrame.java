@@ -17,7 +17,7 @@ public class ProjectileFrame extends JFrame {
     private final JLabel labelY;
     private final JLabel peakY;
     private final JLabel interceptX;
-
+    ProjectileGraph graph = new ProjectileGraph();
 
     public ProjectileFrame() {
         setSize(1000, 600);
@@ -88,16 +88,14 @@ public class ProjectileFrame extends JFrame {
 
         calculateButton.addActionListener(actionEvent -> generateProjectile());
 
-        ProjectileGraph graph = new ProjectileGraph();
         main.add(graph, BorderLayout.CENTER);
-        ProjectileGraph.setProjectile(generateProjectile());
+
+
 
         // make a projectile
         // an arch is a series of small lines
         // one blue dot at peak
         // PR must include screenshot
-
-
     }
 
     private void generateProjectile() {
@@ -112,5 +110,6 @@ public class ProjectileFrame extends JFrame {
         labelY.setText(Double.toString(projectile.getY()));
         peakY.setText(Double.toString(projectile.getPeakY()));
         interceptX.setText(Double.toString(projectile.getInterceptX()));
+        graph.setProjectile(projectile);
     }
 }
