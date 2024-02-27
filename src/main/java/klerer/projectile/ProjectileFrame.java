@@ -90,6 +90,7 @@ public class ProjectileFrame extends JFrame {
 
         ProjectileGraph graph = new ProjectileGraph();
         main.add(graph, BorderLayout.CENTER);
+        ProjectileGraph.setProjectile(generateProjectile());
 
         // make a projectile
         // an arch is a series of small lines
