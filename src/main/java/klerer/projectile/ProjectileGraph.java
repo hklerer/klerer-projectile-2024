@@ -28,6 +28,14 @@ public class ProjectileGraph extends JComponent {
                     (int) projectile.getX(),
                     -(int) projectile.getY());
         }
+
+        g.setColor(Color.BLUE);
+        projectile.getPeakY();
+        g.fillOval((int) (projectile.getInterceptX() / 2 - 3.5),
+                (int) (-projectile.getPeakY() - 3.5),
+                10,
+                10);
+
     }
 
     public void setProjectile(Projectile projectile) {

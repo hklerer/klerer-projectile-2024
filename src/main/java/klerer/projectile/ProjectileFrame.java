@@ -101,7 +101,7 @@ public class ProjectileFrame extends JFrame {
     private void generateProjectile() {
         Projectile projectile = new Projectile(
                 angleSlider.getValue(),
-                Double.parseDouble(velocityField.getText())
+                Double.parseDouble(String.valueOf(velocityField.getText()))
         );
         projectile.setSeconds(
                 Double.parseDouble(secondsField.getText())
