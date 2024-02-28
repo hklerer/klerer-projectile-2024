@@ -90,12 +90,6 @@ public class ProjectileFrame extends JFrame {
 
         main.add(graph, BorderLayout.CENTER);
 
-
-
-        // make a projectile
-        // an arch is a series of small lines
-        // one blue dot at peak
-        // PR must include screenshot
     }
 
     private void generateProjectile() {
