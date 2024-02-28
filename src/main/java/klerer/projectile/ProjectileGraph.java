@@ -12,6 +12,21 @@ public class ProjectileGraph extends JComponent {
         super.paintComponent(g);
 
         g.translate(0, getHeight());
+
+        g.setColor(Color.BLACK);
+
+        for (int i = 0; i <= (projectile.getApexTime() * 2) + 1; i += 1) {
+            double currentX = projectile.getX();
+            double currentY = projectile.getY();
+
+            projectile.setSeconds(i);
+
+            g.drawLine((int) currentX,
+                    -(int) currentY,
+                    (int) projectile.getX(),
+                    -(int) projectile.getY());
+        }
+
         g.drawString("(100, 100)", 100, -100);
         g.setColor(Color.GREEN);
         g.drawLine(0, 0, getWidth(), -getHeight());
@@ -20,8 +35,6 @@ public class ProjectileGraph extends JComponent {
         g.fillRect(400, -400, 25, 25);
         g.setColor(Color.ORANGE);
         g.drawOval(200, -200, 50, 50);
-
-        g.drawLine(0, 0, (int) projectile.getInterceptX(), -(int) projectile.getPeakY());
     }
 
     public void setProjectile(Projectile projectile) {
